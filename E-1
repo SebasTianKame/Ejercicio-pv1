@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funeraria Kamei</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: rgb(227, 237, 240);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            padding-top: 60px; /* Ajuste para el menú con título */
+        }
+        
+        /* Estructura del menú */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ecd8d8;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .menu-title {
+            display: block;
+            color: #3a2f79;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 5px 0;
+            transition: background-color 0.3s;
+        }
+        
+        .menu-title:hover {
+            background-color: #e7e7e7;
+        }
+        
+        .menu-container {
+            display: inline-block;
+        }
+        
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        
+        .menu li {
+            float: left;
+            position: relative;
+        }
+        
+        .menu li a, .menu .dropbtn {
+            display: inline-block;
+            color: #3a2f79;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+        
+        .menu li a:hover, .dropdown:hover .dropbtn {
+            background-color: #e7e7e7;
+            color: #000;
+        }
+        
+        /* Menús desplegables */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            left: 0;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Menú desplegable del título */
+        .title-dropdown {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f9f9f9;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1001;
+            border-radius: 0 0 4px 4px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .title-dropdown-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .title-dropdown-column {
+            min-width: 180px;
+            margin: 5px;
+        }
+        
+        .title-dropdown-column h4 {
+            color: #3a2f79;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .title-dropdown-column ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .title-dropdown-column li a {
+            display: block;
+            color: #333;
+            padding: 5px 0;
+            text-decoration: none;
+        }
+        
+        .title-dropdown-column li a:hover {
+            color: #000;
+            padding-left: 5px;
+        }
+        
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú principal -->
+    <div class="menu">
+        <span class="menu-title" id="mainTitle">Funeraria Kamei</span>
+        <div class="title-dropdown" id="titleDropdown">
+            <div class="title-dropdown-content">
+                <div class="title-dropdown-column">
+                    <h4>Inicio</h4>
+                    <ul>
+                        <li><a href="#bienvenida">Bienvenida</a></li>
+                        <li><a href="#novedades">Novedades</a></li>
+                        <li><a href="#ofertas">Ofertas especiales</a></li>
+                    </ul>
+                </div>
+                <div class="title-dropdown-column">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#pan">Pan</a></li>
+                        <li><a href="#cafe">Café</a></li>
+                        <li><a href="#ataudes">Ataúdes</a></li>
+                        <li><a href="#otros">Otros</a></li>
+                    </ul>
+                </div>
+                <div class="title-dropdown-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="#formulario">Formulario</a></li>
+                        <li><a href="#telefonos">Teléfonos</a></li>
+                        <li><a href="#ubicacion">Ubicación</a></li>
+                        <li><a href="#redes">Redes sociales</a></li>
+                    </ul>
+                </div>
+                <div class="title-dropdown-column">
+                    <h4>Acerca de</h4>
+                    <ul>
+                        <li><a href="#historia">Nuestra historia</a></li>
+                        <li><a href="#mision">Misión y visión</a></li>
+                        <li><a href="#equipo">Nuestro equipo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal - Manteniendo posiciones exactas originales -->
+    <div style="position: relative; height: 100vh;"></div>
+    <img src="https://i.blogs.es/512fb8/pan_comun/1366_2000.jpg" style="position: absolute; top: 100px; right: 100px;" height="300" width="300">
+
+    <div style="position: absolute; top: 400px; right: 200px;">
+        <p>Vendemos <strong>pancito</strong> a <strong>5000</strong><p>
+    </div>
+        <div style="position: absolute; top: 640px; right: 410px;">
+        <p><strong>No olvides Seguirnos en nuestras redes sociales</strong><p>
+    </div>
+<div style="position: absolute; top: 680px; right: 450px; width: 300px;">
+    <p style="margin: 0; white-space: nowrap;"><strong>Tiktok</strong> @funeraria_Kamei_Official</p>
+</div>
+<div style="position: absolute; top: 700px; right: 450px; width: 300px;">
+    <p style="margin: 0; white-space: nowrap;"><strong>Facebook</strong> @funeria_Kamei</p>
+</div>
+<div style="position: absolute; top: 720px; right: 450px; width: 300px;">
+    <p style="margin: 0; white-space: nowrap;"><strong>Telegram</strong> Funeraria Kamei</p>
+</div>
+<div style="position: absolute; top: 740px; right: 450px; width: 300px;">
+    <p style="margin: 0; white-space: nowrap;"><strong>Instagram</strong> @funeraria_Kamei_Official_A</p>
+</div>
+<div style="position: absolute; top: 760px; right: 450px; width: 300px;">
+    <p style="margin: 0; white-space: nowrap;"><strong>Youtube</strong> Funeraria de Kamei</p>
+</div>
+    </div>
+    <div style="position: relative; height: 100vh;"></div>
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiFU_apr7pJq-dIY_9mcd0yTZ-a7gxTPVYcs2VVGopQWXKSATRT-07DK96GUNNNwwlhjMIaU6XawY3TNlYL0z8OIXFH6T07KmCu8FJtF5u0ObhRGlKa6RRv_p0RdoVl6zW1qr99Wvy9XkY4-5WLvzOZy7oULrBjO0KPAJjXz2Q5JVJmzx70twOBi1QXtaw" style="position: absolute; top: 100px; right: 500px;" height="500" width="800">
+
+    <div style="position: relative; height: 100vh;"></div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/1200px-A_small_cup_of_coffee.JPG" style="position: absolute; top: 450px; right: 100px;" height="300" width="300">
+    
+    <div style="position: absolute; top: 750px; right: 200px;">
+        <p>Vendemos <strong>cafe</strong> a <strong>2000</strong><p>
+    </div>
+    
+    <div style="position: relative; height: 100vh;"></div>
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgNfhX7tagqoHbzYM0zn2Zmc87MolWx98VQJZy80k_rvqNCjfVe2oxbVm4xXTnSfc-nN-tlwUXfgD5cvYKuGSf6SAOjmvT72Psk898X95x4W0mhRtFP5e4qO9nMG4a07LCo_bnAo6te3cAuUYH9CkYQ0oc6Tm2boJMjHoxHq-aempjXLFHxYU71c157WiM" style="position: absolute; top: 100px; right: 400px;" height="180" width="180">
+
+    <div style="position: relative; height: 100vh;"></div>
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjDlJoAggM_33-U3fm-5A4460TnC5DtoQyG0WmU_QY0HIEuWEsti1531_4UvSgB5tHXgkM6W9Q3u4x4yBTuV-5i5s58WWv0j8JWVtWGlzAxa3V8ZxXPQuRSTjpRLuRh9FaQFzemn0jvArIVYea4GoDi13B_DB2sX5h7Sk3Mj5PNPHliJVQpxTtuGWB7lp8" style="position: absolute; top: 650px; right: 800px;" height="500" width="500">
+
+    <div style="position: relative; height: 100vh;"></div>
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiXx2rvxSVXLl4aQbzp62r4ScSTc9n7B-B3vq73e68Z-xV2cBx7Qz4g8xvfpCKE_4iOhwZr7JX8PXEDKbbitIQGTl9-2-5eSdIHrv4jpxBJ4nvY5TbxBzjo4CIlpk1vZ4x2ngAJS2njsODC6Ctr6eiIrWqKweEwKBVelqk-HWkWva2D5sLe91uhhj8HeSE" style="position: absolute; top: 820px; right: 100px;" height="300" width="400">
+
+    <script>
+        // Mostrar/ocultar menú del título al hacer clic
+        document.getElementById('mainTitle').addEventListener('click', function() {
+            var dropdown = document.getElementById('titleDropdown');
+            dropdown.classList.toggle('show');
+        });
+        
+        // Ocultar menú al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            var dropdown = document.getElementById('titleDropdown');
+            var title = document.getElementById('mainTitle');
+            
+            if (!title.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>}
